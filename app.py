@@ -1,6 +1,10 @@
-def app(environ, start_response):
-    status = "200 OK"
-    html = b"""
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,15 +34,12 @@ def app(environ, start_response):
 <body>
     <div class="container">
         <h1>Hello from GitHub!</h1>
-        <p>This code was deployed automatically.</p>
-        <p>CI/CD is working! ✅</p>
+        <p>Deployed automatically via CI/CD.</p>
+        <p>It works! ✅</p>
     </div>
 </body>
 </html>
-    """
-    headers = [
-        ("Content-Type", "text/html; charset=utf-8"),
-        ("Content-Length", str(len(html)))
-    ]
-    start_response(status, headers)
-    return [html]
+"""
+
+if __name__ == '__main__':
+    app.run()
