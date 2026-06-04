@@ -33,7 +33,7 @@ def home():
 </head>
 <body>
     <div class="container">
-        <h1>Hello from GitHub!</h1>
+        <h1>Hello from GitHub! 🚀 v2</h1>
         <p>Deployed automatically via CI/CD.</p>
         <p>It works! ✅</p>
     </div>
